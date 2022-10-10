@@ -1,0 +1,25 @@
+### 
+GET http://localhost:3003/shopper/user
+
+###
+GET http://localhost:3003/shopper/products
+
+### 
+GET http://localhost:3003/shopper/user/products
+
+###
+POST http://localhost:3003/shopper/user/products
+Content-Type: application/json
+
+{
+    "id_product": 25,
+    "id_user": 123
+}
+###
+POST http://localhost:3003/shopper/user
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "delivery_date": "2022-10-01"
+}
