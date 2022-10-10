@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 
-import { productsRouter }  from './router/ProductsRouter'
+import { userRouter } from './router/UserRouter'
 
 dotenv.config()
 
@@ -14,5 +14,5 @@ app.listen(process.env.PORT || 3003, () => {
     console.log(`Servidor rodando na porta ${process.env.PORT || 3003}`)
 })
 
-app.use("/user", productsRouter)
+app.use("/shopper", userRouter)
 
