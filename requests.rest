@@ -1,5 +1,8 @@
 ### 
-GET http://localhost:3003/shopper/user
+GET http://localhost:3003/shopper/user/maycon
+
+###
+GET http://localhost:3003/shopper/user/products/4149fd68-6ceb-4e1c-baf9-395397aa6427
 
 ###
 GET http://localhost:3003/shopper/products
@@ -8,18 +11,24 @@ GET http://localhost:3003/shopper/products
 GET http://localhost:3003/shopper/user/products
 
 ###
+GET http://localhost:3003/shopper/product/20
+
+### Esta tendo erro de sintaxe MySQl 
+GET http://localhost:3003/shopper/user/products/user/4149fd68-6ceb-4e1c-baf9-395397aa6427
+
+###
 POST http://localhost:3003/shopper/user/products
 Content-Type: application/json
 
 {
-    "id_product": 25,
-    "id_user": 123
+    "id_product": 45,
+    "id_user": "4149fd68-6ceb-4e1c-baf9-395397aa6427"
 }
 ###
 POST http://localhost:3003/shopper/user
 Content-Type: application/json
 
 {
-    "name": "teste",
+    "name": "teste2",
     "delivery_date": "2022-10-01"
 }
