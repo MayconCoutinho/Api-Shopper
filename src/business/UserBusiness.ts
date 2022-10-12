@@ -8,12 +8,20 @@ export class UserBusiness {
         private idGenerator: IdGenerator,
         private userDataBase:UserDataBase
     ) {}
-    async getProductsUser(): Promise<any> {
-        const response = await this.userDataBase.getProductsUser()
+    async getUser(name:string): Promise<any> {
+        const response = await this.userDataBase.getUser(name)
         return response
     }
-    async getUser(): Promise<any> {
-        const response = await this.userDataBase.getUser()
+    async getProductsUserQuantity(name:string): Promise<any> {
+        const response = await this.userDataBase.getProductsUserQuantity(name)
+        return response
+    }
+    async getAllProductsUser(id:string): Promise<any> {
+        const response = await this.userDataBase.getAllProductsUser(id)
+        return response
+    }
+    async getProductsPrice(id:string): Promise<any> {
+        const response = await this.userDataBase.getProductsPrice(id)
         return response
     }
     async postUser(input: UserReqDTO ): Promise<ProductsUserOutputDTO> {

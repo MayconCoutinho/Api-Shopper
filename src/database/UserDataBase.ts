@@ -20,15 +20,31 @@ export class UserDataBase extends BaseDataBase {
         }
         return userDB
     }
-    public async getProductsUser() {
-        const result = await BaseDataBase.connection(PRODUCTS_USER_LIST)
-            .select('*')
-        return result
+    public async getUser(name:string) {
+        const result = await BaseDataBase.connection.raw(`
+        SELECT id FROM user
+        WHERE name LIKE "${name}"; 
+            `)
+        return result[0]
     }
-    public async getUser() {
-        const result = await BaseDataBase.connection(USER_LIST)
-            .select('*')
-        return result
+    public async getProductsUserQuantity(name:string) {
+        const result = await BaseDataBase.connection.raw(`
+        SELECT quantity FROM products_user WHERE id_user LIKE "${name}";
+            `)
+        return result[0]
+    }
+    public async getAllProductsUser(id:string) {
+        const result = await BaseDataBase.connection.raw(`
+        SELECT id_product FROM products_user
+        WHERE id_user LIKE ${id}; 
+            `)
+        return result[0]
+    }
+    public async getProductsPrice(id:string) {
+        const result = await BaseDataBase.connection.raw(`
+        SELECT price FROM products WHERE id LIKE "${id}";
+            `)
+        return result[0]
     }
     public async postUser(user:User) {
         const UserDB = this.UserDBModel(user)

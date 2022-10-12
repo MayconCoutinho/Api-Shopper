@@ -6,18 +6,43 @@ export class UserController {
     constructor(
         private userBusiness:UserBusiness
     ){}
-    public getProductsUser = async (req: Request, res: Response) => {
+    public getUser = async (req: Request, res: Response) => {
         try {
-            const response = await this.userBusiness.getProductsUser()
+            const name: string = req.params.name
+            
+            const response = await this.userBusiness.getUser(name)
             res.status(201).send(response)
         } catch (error: any) {
             console.log(error)
             res.status(500).send(error)
         }
     }
-    public getUser = async (req: Request, res: Response) => {
+    public getProductsUserQuantity = async (req: Request, res: Response) => {
         try {
-            const response = await this.userBusiness.getUser()
+            const name: string = req.params.name
+            
+            const response = await this.userBusiness.getProductsUserQuantity(name)
+            res.status(201).send(response)
+        } catch (error: any) {
+            console.log(error)
+            res.status(500).send(error)
+        }
+    }
+    public getAllProductsUser = async (req: Request, res: Response) => {
+        try {
+            const id: string = req.params.id
+            
+            const response = await this.userBusiness.getAllProductsUser(id)
+            res.status(201).send(response)
+        } catch (error: any) {
+            console.log(error)
+            res.status(500).send(error)
+        }
+    }
+    public getProductsPrice = async (req: Request, res: Response) => {
+        try {
+            const id: string = req.params.id
+            const response = await this.userBusiness.getProductsPrice(id)
             res.status(201).send(response)
         } catch (error: any) {
             console.log(error)
