@@ -28,21 +28,21 @@ export class UserController {
             res.status(500).send(error)
         }
     }
-    public getAllProductsUser = async (req: Request, res: Response) => {
+    public getTotalProductsPrice = async (req: Request, res: Response) => {
         try {
             const id: string = req.params.id
-            
-            const response = await this.userBusiness.getAllProductsUser(id)
+            const response = await this.userBusiness.getTotalProductsPrice(id)
             res.status(201).send(response)
         } catch (error: any) {
             console.log(error)
             res.status(500).send(error)
         }
     }
-    public getProductsPrice = async (req: Request, res: Response) => {
+    public putUpProductQuantity = async (req: Request, res: Response) => {
         try {
-            const id: string = req.params.id
-            const response = await this.userBusiness.getProductsPrice(id)
+            const id = req.params.id
+            const quantity = req.params.quantity
+            const response = await this.userBusiness.putUpProductQuantity(id,quantity)
             res.status(201).send(response)
         } catch (error: any) {
             console.log(error)

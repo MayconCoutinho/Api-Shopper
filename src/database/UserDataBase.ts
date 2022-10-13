@@ -29,22 +29,25 @@ export class UserDataBase extends BaseDataBase {
     }
     public async getProductsUserQuantity(name:string) {
         const result = await BaseDataBase.connection.raw(`
-        SELECT quantity FROM products_user WHERE id_user LIKE "${name}";
+        SELECT id_product, quantity FROM products_user WHERE id_user LIKE "${name}";
             `)
         return result[0]
     }
-    public async getAllProductsUser(id:string) {
+    public async getTotalProductsPrice(id:string) {
         const result = await BaseDataBase.connection.raw(`
-        SELECT id_product FROM products_user
-        WHERE id_user LIKE ${id}; 
+        SELECT SUM(price) AS "price_total" FROM products
+        WHERE id IN (SELECT id_product FROM products_user
+        WHERE id_user LIKE  "${id}"); 
             `)
         return result[0]
     }
-    public async getProductsPrice(id:string) {
-        const result = await BaseDataBase.connection.raw(`
-        SELECT price FROM products WHERE id LIKE "${id}";
-            `)
-        return result[0]
+    public async putUpProductQuantity(id:string, quantity:string) {
+        await BaseDataBase.connection.raw(`
+        UPDATE products_user
+        SET quantity = "${quantity}"
+        WHERE id_product = "${id}";
+        `)
+        return `Quantidade mudada com sucesso`
     }
     public async postUser(user:User) {
         const UserDB = this.UserDBModel(user)
