@@ -18,8 +18,11 @@ const userController = new UserController(
 userRouter.get("/products", productsController.getProducts)
 userRouter.get("/user/:name", userController.getUser)
 userRouter.get("/user/products/:name", userController.getProductsUserQuantity)
-userRouter.get("/user/products/user/:id", userController.getAllProductsUser)
-userRouter.get("/product/:id", userController.getProductsPrice)
+userRouter.get("/product/total/price/:id", userController.getTotalProductsPrice)
 
 userRouter.post("/user/products", userController.postProductsUser)
 userRouter.post("/user", userController.postUser)
+
+userRouter.put("/user/:id/:quantity", userController.putUpProductQuantity)
+
+

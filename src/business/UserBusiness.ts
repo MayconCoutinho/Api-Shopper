@@ -16,12 +16,12 @@ export class UserBusiness {
         const response = await this.userDataBase.getProductsUserQuantity(name)
         return response
     }
-    async getAllProductsUser(id:string): Promise<any> {
-        const response = await this.userDataBase.getAllProductsUser(id)
+    async getTotalProductsPrice(id:string): Promise<any> {
+        const response = await this.userDataBase.getTotalProductsPrice(id)
         return response
     }
-    async getProductsPrice(id:string): Promise<any> {
-        const response = await this.userDataBase.getProductsPrice(id)
+    async putUpProductQuantity(id:string, quantity:string): Promise<any> {
+        const response = await this.userDataBase.putUpProductQuantity(id,quantity)
         return response
     }
     async postUser(input: UserReqDTO ): Promise<ProductsUserOutputDTO> {
@@ -56,6 +56,7 @@ export class UserBusiness {
         }
         return response
     }
+    
     // async putProducts(): Promise<any> {
     //     const putProductsDataBase = new ProductsDataBase()
     //     const result = await putProductsDataBase.putProducts(12,2)

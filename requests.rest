@@ -2,7 +2,7 @@
 GET http://localhost:3003/shopper/user/maycon
 
 ###
-GET http://localhost:3003/shopper/user/products/4149fd68-6ceb-4e1c-baf9-395397aa6427
+GET http://localhost:3003/shopper/user/products/580f22bd-7f79-406a-aec3-2caf61477d4f-6ceb-4e1c-baf9-395397aa6427
 
 ###
 GET http://localhost:3003/shopper/products
@@ -11,10 +11,10 @@ GET http://localhost:3003/shopper/products
 GET http://localhost:3003/shopper/user/products
 
 ###
-GET http://localhost:3003/shopper/product/20
+GET http://localhost:3003/shopper/product/total/price/4149fd68-6ceb-4e1c-baf9-395397aa6427
 
-### Esta tendo erro de sintaxe MySQl 
-GET http://localhost:3003/shopper/user/products/user/4149fd68-6ceb-4e1c-baf9-395397aa6427
+###
+PUT http://localhost:3003/shopper/user/19/8
 
 ###
 POST http://localhost:3003/shopper/user/products
