@@ -8,7 +8,6 @@ export class ProductsController {
             const result = await getProductsBusiness.getProducts()
             res.status(201).send({ result })
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }

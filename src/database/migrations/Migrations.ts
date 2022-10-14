@@ -15,7 +15,7 @@ class Migrations extends BaseDataBase{
             await Migrations.connection(PRODUCTS_LIST).insert(products)
             console.log("Products added successfully")
         } catch (error:any) {
-            console.log(error.mensage)
+            console.log(error.mensage = undefined ? `Deu algum problema no banco de dados` : `Os produtos já existem no banco de dados` )
         }
     }
     createTables = async() => {
