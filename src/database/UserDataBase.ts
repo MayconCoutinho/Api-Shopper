@@ -29,15 +29,26 @@ export class UserDataBase extends BaseDataBase {
     }
     public async getProductsUserQuantity(name:string) {
         const result = await BaseDataBase.connection.raw(`
-        SELECT id_product, quantity FROM products_user WHERE id_user LIKE "${name}";
+        SELECT name, id_product, quantity, price FROM products_user
+        INNER JOIN products 
+        ON products_user.id_product = products.id AND products_user.id_user = "${name}";
             `)
         return result[0]
     }
+    public async deleteProductsUser(id:string) {
+        await BaseDataBase.connection(PRODUCTS_USER_LIST)            
+            .delete()
+            .where("id_product", id)
+        return `Produto Retirado Com Sucesso`
+    }
     public async getTotalProductsPrice(id:string) {
         const result = await BaseDataBase.connection.raw(`
-        SELECT SUM(price) AS "price_total" FROM products
-        WHERE id IN (SELECT id_product FROM products_user
-        WHERE id_user LIKE  "${id}"); 
+        SELECT SUM(quantity * price) AS "price_total" FROM products_user
+        INNER JOIN products 
+        ON products_user.id_product = products.id  
+        INNER JOIN user
+        ON products_user.id_user = user.id
+        WHERE user.id = "${id}";
             `)
         return result[0]
     }
@@ -46,6 +57,14 @@ export class UserDataBase extends BaseDataBase {
         UPDATE products_user
         SET quantity = "${quantity}"
         WHERE id_product = "${id}";
+        `)
+        return `Quantidade mudada com sucesso`
+    }
+    public async putUpQtyStockQuantity(id:string, quantity:string) {
+        await BaseDataBase.connection.raw(`
+        UPDATE products
+        SET qty_stock = "${quantity}"
+        WHERE id = "${id}";
         `)
         return `Quantidade mudada com sucesso`
     }

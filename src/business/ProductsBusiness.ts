@@ -6,9 +6,4 @@ export class ProductsBusiness {
         const result = await getProductsDataBase.getProducts()
         return result
     }
-    async putProducts(): Promise<any> {
-        const putProductsDataBase = new ProductsDataBase()
-        const result = await putProductsDataBase.putProducts(12,2)
-        return result
-    }
 }

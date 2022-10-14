@@ -16,12 +16,20 @@ export class UserBusiness {
         const response = await this.userDataBase.getProductsUserQuantity(name)
         return response
     }
+    async deleteProductsUser(id:string): Promise<any> {
+        const response = await this.userDataBase.deleteProductsUser(id)
+        return response
+    }
     async getTotalProductsPrice(id:string): Promise<any> {
         const response = await this.userDataBase.getTotalProductsPrice(id)
         return response
     }
     async putUpProductQuantity(id:string, quantity:string): Promise<any> {
         const response = await this.userDataBase.putUpProductQuantity(id,quantity)
+        return response
+    }
+    async putUpQtyStockQuantity(id:string, quantity:string): Promise<any> {
+        const response = await this.userDataBase.putUpQtyStockQuantity(id,quantity)
         return response
     }
     async postUser(input: UserReqDTO ): Promise<ProductsUserOutputDTO> {
@@ -56,11 +64,4 @@ export class UserBusiness {
         }
         return response
     }
-    
-    // async putProducts(): Promise<any> {
-    //     const putProductsDataBase = new ProductsDataBase()
-    //     const result = await putProductsDataBase.putProducts(12,2)
-    //     // Tem que receber dados do id do produto e a quantidade
-    //     return result
-    // }
 }

@@ -28,6 +28,17 @@ export class UserController {
             res.status(500).send(error)
         }
     }
+    public deleteProductsUser = async (req: Request, res: Response) => {
+        try {
+            const id: string = req.params.id
+            
+            const response = await this.userBusiness.deleteProductsUser(id)
+            res.status(201).send(response)
+        } catch (error: any) {
+            console.log(error)
+            res.status(500).send(error)
+        }
+    }
     public getTotalProductsPrice = async (req: Request, res: Response) => {
         try {
             const id: string = req.params.id
@@ -43,6 +54,17 @@ export class UserController {
             const id = req.params.id
             const quantity = req.params.quantity
             const response = await this.userBusiness.putUpProductQuantity(id,quantity)
+            res.status(201).send(response)
+        } catch (error: any) {
+            console.log(error)
+            res.status(500).send(error)
+        }
+    }
+    public putUpQtyStockQuantity = async (req: Request, res: Response) => {
+        try {
+            const id = req.params.id
+            const quantity = req.params.quantity
+            const response = await this.userBusiness.putUpQtyStockQuantity(id,quantity)
             res.status(201).send(response)
         } catch (error: any) {
             console.log(error)
