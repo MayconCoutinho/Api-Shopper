@@ -24,9 +24,7 @@ userRouter.post("/user/products", userController.postProductsUser)
 userRouter.post("/user", userController.postUser)
 
 userRouter.put("/user/:id/:quantity", userController.putUpProductQuantity)
-
 userRouter.put("/products/:id/:quantity", userController.putUpQtyStockQuantity)
-
 
 userRouter.delete("/user/products/:id", userController.deleteProductsUser)
 

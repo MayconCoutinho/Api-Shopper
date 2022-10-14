@@ -1,5 +1,6 @@
 import { Request, Response } from "express"
 import { UserBusiness } from "../business/UserBusiness"
+import { BaseError } from "../errors/BaseError"
 import { ProductsUserReqDTO, UserReqDTO } from "../models/Products"
 
 export class UserController {
@@ -13,7 +14,6 @@ export class UserController {
             const response = await this.userBusiness.getUser(name)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -24,7 +24,6 @@ export class UserController {
             const response = await this.userBusiness.getProductsUserQuantity(name)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -35,7 +34,6 @@ export class UserController {
             const response = await this.userBusiness.deleteProductsUser(id)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -45,7 +43,6 @@ export class UserController {
             const response = await this.userBusiness.getTotalProductsPrice(id)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -56,7 +53,6 @@ export class UserController {
             const response = await this.userBusiness.putUpProductQuantity(id,quantity)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -67,7 +63,6 @@ export class UserController {
             const response = await this.userBusiness.putUpQtyStockQuantity(id,quantity)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
@@ -80,8 +75,7 @@ export class UserController {
             const response = await this.userBusiness.postUser(input)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
-            res.status(500).send(error)
+            res.status(220).send({menssage : `O usuario já existe`})
         }
     }
     public postProductsUser = async (req: Request, res: Response) => {
@@ -93,7 +87,6 @@ export class UserController {
             const response = await this.userBusiness.postProductsUser(input)
             res.status(201).send(response)
         } catch (error: any) {
-            console.log(error)
             res.status(500).send(error)
         }
     }
