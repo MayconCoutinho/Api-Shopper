@@ -1,7 +1,7 @@
 # Api-Shopper:
 
 <h1 align="center">
-<img width=150 src="https://programada.shopper.com.br/static/img/apple-icon.png">
+<img width=150 src="https://user-images.githubusercontent.com/60453269/196004447-1746c4f2-dba8-40fd-8fa5-1f24a3ea3f4a.png">
 </h1>
 
 ## ✨ Sobre
