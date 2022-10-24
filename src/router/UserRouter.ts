@@ -1,13 +1,10 @@
 import express from "express"
-import { ProductsController } from "../controller/ProductsController"
 import { UserController } from "../controller/UserController"
 import { UserBusiness } from "../business/UserBusiness"
-import { IdGenerator } from '../services/IdGenerator'
 import { UserDataBase } from "../database/UserDataBase"
+import { IdGenerator } from '../services/IdGenerator'
 
 export const userRouter = express.Router()
-
-const productsController = new ProductsController()
 
 const userController = new UserController(
     new UserBusiness(
@@ -15,16 +12,14 @@ const userController = new UserController(
         new UserDataBase()
     )
 )
-userRouter.get("/products", productsController.getProducts)
-userRouter.get("/user/:name", userController.getUser)
-userRouter.get("/user/products/:name", userController.getProductsUserQuantity)
+userRouter.get("/:name", userController.getUser)
+userRouter.get("/products/:name", userController.getProductsUserQuantity)
 userRouter.get("/product/total/price/:id", userController.getTotalProductsPrice)
 
-userRouter.post("/user/products", userController.postProductsUser)
-userRouter.post("/user", userController.postUser)
+userRouter.post("/products", userController.postProductsUser)
+userRouter.post("/", userController.postUser)
 
-userRouter.put("/user/:id/:quantity", userController.putUpProductQuantity)
-userRouter.put("/products/:id/:quantity", userController.putUpQtyStockQuantity)
+userRouter.put("/:id/:quantity", userController.putUpProductQuantity)
 
-userRouter.delete("/user/products/:id", userController.deleteProductsUser)
+userRouter.delete("/products/:id", userController.deleteProductsUser)
 

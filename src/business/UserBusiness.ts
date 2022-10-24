@@ -1,5 +1,6 @@
 import { UserDataBase } from "../database/UserDataBase"
-import { ProductsUserReqDTO, ProductsUserOutputDTO, UserReqDTO,User } from "../models/Products"
+import { ProductsUserReqDTO, ProductsUserOutputDTO } from "../models/Products"
+import { User, UserReqDTO } from "../models/User"
 import { IdGenerator } from "../services/IdGenerator"
 import { ProductsUser } from "../models/Products"
 
@@ -26,10 +27,6 @@ export class UserBusiness {
     }
     async putUpProductQuantity(id:string, quantity:string): Promise<any> {
         const response = await this.userDataBase.putUpProductQuantity(id,quantity)
-        return response
-    }
-    async putUpQtyStockQuantity(id:string, quantity:string): Promise<any> {
-        const response = await this.userDataBase.putUpQtyStockQuantity(id,quantity)
         return response
     }
     async postUser(input: UserReqDTO ): Promise<ProductsUserOutputDTO> {
