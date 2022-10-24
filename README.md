@@ -1,7 +1,5 @@
-# Api-Shopper:
-
 <h1 align="center">
-<img width=200 src="https://user-images.githubusercontent.com/60453269/196004447-1746c4f2-dba8-40fd-8fa5-1f24a3ea3f4a.png">
+<img src="https://user-images.githubusercontent.com/60453269/197553620-fdb2ef65-9b3a-4d4d-af41-9ca3d1b856f8.png">
 </h1>
 
 ## ✨ Sobre
