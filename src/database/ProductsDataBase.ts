@@ -7,12 +7,12 @@ export class ProductsDataBase extends BaseDataBase {
             .select('*')
         return result
     }
-    public async putProducts(id:number, quantity:number) {
-        const result = await BaseDataBase.connection(PRODUCTS_LIST)
-            .update({
-                qty_stock: quantity
-            })
-            .where("id",id)
-        return result
+    public async putUpQtyStockQuantity(id:string, quantity:string) {
+        await BaseDataBase.connection.raw(`
+            UPDATE products
+            SET qty_stock = "${quantity}"
+            WHERE id = "${id}";
+        `)
+        return `Quantidade mudada com sucesso`
     }
 }

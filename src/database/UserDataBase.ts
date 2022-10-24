@@ -1,6 +1,7 @@
 import { BaseDataBase } from "./BaseDataBase"
 import { PRODUCTS_USER_LIST, USER_LIST } from "./migrations/Migrations"
-import { ProductsUser, ProductsUserDTO, User, UserDTO } from "../models/Products"
+import { ProductsUser, ProductsUserDTO } from "../models/Products"
+import { User, UserDTO } from "../models/User"
 
 export class UserDataBase extends BaseDataBase {
     public toProductsUserDBModel = (productsUser:ProductsUser): ProductsUserDTO => {
@@ -57,14 +58,6 @@ export class UserDataBase extends BaseDataBase {
         UPDATE products_user
         SET quantity = "${quantity}"
         WHERE id_product = "${id}";
-        `)
-        return `Quantidade mudada com sucesso`
-    }
-    public async putUpQtyStockQuantity(id:string, quantity:string) {
-        await BaseDataBase.connection.raw(`
-        UPDATE products
-        SET qty_stock = "${quantity}"
-        WHERE id = "${id}";
         `)
         return `Quantidade mudada com sucesso`
     }

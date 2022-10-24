@@ -1,5 +1,5 @@
 import { BaseDataBase } from "../BaseDataBase";
-import products from "../products.json"
+import products from "../../json/products.json"
 
 export const USER_LIST = "user"
 export const PRODUCTS_LIST = "products"
