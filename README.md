@@ -4,7 +4,7 @@
 
 <br/>
 
-## `Documentção no Posteman` ➥ [Link](https://documenter.getpostman.com/view/22767800/2s8YCdGuUL#c05a557e-5382-4b06-824f-e4749a76878f)
+## `Documentação no Posteman` ➥ [Link](https://documenter.getpostman.com/view/22767800/2s8YCdGuUL#c05a557e-5382-4b06-824f-e4749a76878f)
 
 <br/>
 
