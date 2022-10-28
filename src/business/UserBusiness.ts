@@ -17,8 +17,8 @@ export class UserBusiness {
         const response = await this.userDataBase.getProductsUserQuantity(name)
         return response
     }
-    async deleteProductsUser(id:string): Promise<any> {
-        const response = await this.userDataBase.deleteProductsUser(id)
+    async deleteProductsUser(id:string, user:string): Promise<any> {
+        const response = await this.userDataBase.deleteProductsUser(id, user)
         return response
     }
     async getTotalProductsPrice(id:string): Promise<any> {

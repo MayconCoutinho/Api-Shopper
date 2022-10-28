@@ -35,7 +35,8 @@ export class UserController {
     public deleteProductsUser = async (req: Request, res: Response) => {
         try {
             const id: string = req.params.id
-            const response = await this.userBusiness.deleteProductsUser(id)
+            const user: string = req.params.user
+            const response = await this.userBusiness.deleteProductsUser(id, user)
             res.status(201).send(response)
         } catch (error: any) {
             if (error instanceof BaseError) {
