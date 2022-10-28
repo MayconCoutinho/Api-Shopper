@@ -36,10 +36,12 @@ export class UserDataBase extends BaseDataBase {
             `)
         return result[0]
     }
-    public async deleteProductsUser(id:string) {
-        await BaseDataBase.connection(PRODUCTS_USER_LIST)            
-            .delete()
-            .where("id_product", id)
+    public async deleteProductsUser(id:string, user:string) {
+        await BaseDataBase.connection.raw(`
+        DELETE FROM products_user 
+        WHERE id_user LIKE "${user}"
+        AND id_product = "${id}"; 
+            `)
         return `Produto Retirado Com Sucesso`
     }
     public async getTotalProductsPrice(id:string) {

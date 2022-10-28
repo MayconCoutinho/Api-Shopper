@@ -21,5 +21,5 @@ userRouter.post("/", userController.postUser)
 
 userRouter.put("/:id/:quantity", userController.putUpProductQuantity)
 
-userRouter.delete("/products/:id", userController.deleteProductsUser)
+userRouter.delete("/products/:id/:user", userController.deleteProductsUser)
 
