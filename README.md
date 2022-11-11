@@ -10,17 +10,6 @@
 
 ## `Projeto Front-end` ➥ [Link GitHub](https://github.com/MayconCoutinho/Front-end-Shopper)
 
-<h3 align="center">
-  🔊 Ative o Som Para Ter Uma Experiência Mais Agradável 😁  <br/>
-</h3>
-
-<br>
-
-https://user-images.githubusercontent.com/60453269/197554091-d03eaa76-9acd-4b99-b17a-804a2182339f.mp4
-
-
-<br/>
-
 <br/>
 
 ## ✨ Sobre
