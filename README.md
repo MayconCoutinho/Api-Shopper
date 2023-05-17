@@ -1,6 +1,39 @@
-<h1 align="center">
-<img src="https://user-images.githubusercontent.com/60453269/197553620-fdb2ef65-9b3a-4d4d-af41-9ca3d1b856f8.png">
-</h1>
+<p align="center">
+  <img src="https://github.com/MayconCoutinho/Rede-Social-API/assets/60453269/515d2343-8050-457b-86bc-1a98067b31d2" alt="Logo" width="150" height="160" />
+</p>
+
+<h1 align="center"> Shopper </h1>
+
+<a id="Sumário"></a>
+
+
+<p align="center">
+  <b> Back-end  </b></br>
+  <sub> Api desenvolvida para atender as demandas de um teste tecnico da Shopper.com.br 
+  <sub>
+</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+
+<p align="center">
+  <a href="#Introdução"> 🧩 Introdução </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Resultados"> 🚀 Resultados</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Dependências"> 🧪 Dependências</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Ideias">💡 Possíveis Melhorias </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Creditos"> 🏆 Créditos </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+
+<br /> 
+
+
+<a id="Introdução"></a>
+## 🧩 Introdução 
+
+  ***⠀⠀⠀⠀Essa API foi desenvolvida para representar a dinâmica básica de um supermercado virtual. Aqui será encontrado três entidades fundamentais para o bom funcionamento de um supermercado: produtos, usuário e carrinho de compra. As funcionalidades básicas encontradas nessa API são: ver os produto e mudar a quantidade de estoque, cadastrar usuário, adicionar, remover e ver produtos dentro do carrinho.***
+
+<br/>
+
 
 <br/>
 
@@ -11,12 +44,6 @@
 ## `Projeto Front-end` ➥ [Link GitHub](https://github.com/MayconCoutinho/Front-end-Shopper)
 
 <br/>
-
-## ✨ Sobre
-Essa API foi desenvolvida para representar a dinâmica básica de um supermercado virtual. Aqui será encontrado três entidades fundamentais para o bom funcionamento de um supermercado: produtos, usuário e carrinho de compra. As funcionalidades básicas encontradas nessa API são: ver os produto e mudar a quantidade de estoque, cadastrar usuário, adicionar, remover e ver produtos dentro do carrinho.   
-ﾠ
-<br/>
-
 
 ## 🚩 As funcionalidades básicas da API são:
 
