@@ -34,14 +34,20 @@
 
 <br/>
 
-
-<br/>
-
 ## `Documentação no Posteman` ➥ [Link](https://documenter.getpostman.com/view/22767800/2s8YCdGuUL#c05a557e-5382-4b06-824f-e4749a76878f)
 
 <br/>
 
 ## `Projeto Front-end` ➥ [Link GitHub](https://github.com/MayconCoutinho/Front-end-Shopper)
+
+<br/>
+  
+  <br/>
+
+
+<a id="Resultados"></a>
+## 🚀 Resultados 
+  > Todos os resultados foram alcançados com sucesso. De modo geral são esses os resultados de cada requisição. 
 
 <br/>
 
@@ -253,10 +259,126 @@ id = id do produto
 
 <br/>
 
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<br /> 
+
+<a id="Dependências"></a>
+## 🧪 Dependências
+> Requisitos para rotar o codigo...
+
+<br/>
+
+## `📖 Instalação` 
+  
+  
+ <br /> 
+
+> Caso tenha Git basta da git clone, caso não tenha baixe o projeto completo em dowlon
+
+```BASH
+git clone https://github.com/MayconCoutinho/Api-Shopper
+
+```
+
+<br /> 
+
+> Caso já tenha o Node em sua maquina basta instalar o projeto com npm i
+
+```BASH
+npm i 
+```
+
+<br /> 
+
+> OBS - Muito importante, caso não tenha um banco de dados MySQL disponivel, não vai da para rodar o projeto, pois o projeto conecta diretamente com o banco de dados
+> sendo assim crie um arquivo ".env" para por os dados do MySQL.
+
+
+```BASH
+
+DB_HOST = Dados MySQL
+DB_USER = Dados MySQL
+DB_PASSWORD = Dados MySQL
+DB_SCHEMA = Dados MySQL
+
+```
+
+<br /> 
+
+## `📖 Scripts` 
+
+```JSON
+  "scripts": {
+   "start": "node ./build/src/index.js",
+    "migrations": "npx prisma migrate dev",
+    "build": "tsc",
+    "dev": "ts-node-dev ./src/server.ts ",
+    "test": "vitest",
+    "commit": "git-cz"
+  }
+
+```
+<br/>
+
+## `📖 Dependencies` 
+
+```JSON
+  "dependencies": {
+   "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "knex": "^2.3.0",
+    "mysql": "^2.18.1",
+    "swagger-ui-express": "^4.6.3",
+    "uuid": "^9.0.0"
+  }
+
+```
+
+<br /> 
+
+## `📖 devDependencies` 
+
+
+```JSON
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^18.8.2",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/uuid": "^8.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
+
+```
+<br/>
+
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<br /> 
+
+<a id="Ideias"></a>
+## 💡 Possíveis Melhoras
+> Possíveis melhorias no código e no projeto, caso queira voltar e melhorá lo.
+
+<br /> 
+
+- [ ] ***- *** 
+- [x] ***- *** 
+
+<br/>
+
+<a href="#Sumário"> 📖 Volta ao Sumário </a>
+
+<br /> 
 
 <a id="Creditos"></a>
 ## 🏆 Créditos
-
+> Todo o projeto foi feito por...
+  
 <br /> 
 
 <div > 
@@ -264,7 +386,6 @@ id = id do produto
 | [<img src="https://user-images.githubusercontent.com/60453269/217899761-dc2d4e4b-3336-419d-9076-79304290aa0a.png" width=300><br><sub> Maycon Coutinho </sub>](https://www.linkedin.com/in/maycon-coutinho/) | ***Hello 😃 Se você chegou até aqui, acredito que gostou do meu projeto, nesse caso temos algo em comum, sendo assim que tal conversamos um pouco? Meu chama no linkedin 😁*** | 
 |---|---|
 
-
-
-
 </div> 
+  
+<br /> 
