@@ -1,0 +1,360 @@
+{   
+    "openapi": "3.0.n",
+    "info":{
+        "title": "🍉🍊🥝 Api",
+        "description": "Essa API foi desenvolvida para representar a dinâmica básica de um supermercado virtual. Aqui será encontrado três entidades fundamentais para o bom funcionamento de um supermercado: produtos, usuário e carrinho de compra. As funcionalidades básicas encontradas nessa API são: ver os produto e mudar a quantidade de estoque, cadastrar usuário, adicionar, remover e ver produtos dentro do carrinho.", 
+        "termsOfServices": "http://localhost:3003/shopper",      
+        "summary": "Uma api de um supermercado virtual automatizado",
+        "contact": {
+            "name": "Maycon Coutinho",
+            "url": "https://www.linkedin.com/in/maycon-coutinho/",
+            "email": "mayconcoutinhoart@gmail.com"
+        },
+        "servers": [
+            {
+                "url": "https://localhost:3003/shopper",
+                "description": "API de teste"
+            },
+            {
+                "url": "https://render.name/",
+                "description": "API de produção"
+            }
+        ],
+        "version": "1.0.0"
+    },
+    "tags": [
+        {
+          "name": "🛒 Products",
+          "description": "Acesso e modificação de todos os produtos disponivel"
+        },
+        {
+          "name": "🧑🏻 User",
+          "description": "Todas funcionalizades disponivel para o usuario"
+        }
+      ],
+      "host": "localhost:3003/shopper",
+      "schemes": [
+        "http"
+      ],
+      
+    
+      "paths": {
+        "/products": {
+          "get": {
+            "tags": ["🛒 Products"],
+
+            "summary": "Obtém a lista de produtos",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/Produto"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+
+        "/products/{id}/{quantity}": {
+          "put": {
+            "tags": ["🛒 Products"],
+
+            "summary": "Atualiza a quantidade de um produto",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "quantity",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "Quantidade mudada com sucesso",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+
+        "/user/products/{name}": {
+          "get": {
+            "tags" : ["🧑🏻 User"],
+            "summary": "Obtém os produtos de um usuário pelo nome",
+            "parameters": [
+              {
+                "name": "name",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/UserProduct"
+                  }
+                }
+              }
+            }
+          }
+        },
+
+
+        "/user/product/total/price/{id}": {
+          "get": {
+            "tags" : ["🧑🏻 User"],
+            "summary": "Obtém o total de preço do produto de um usuário pelo ID",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/TotalPrice"
+                  }
+                }
+              }
+            }
+          }
+        },
+
+
+        "/user/products": {
+          "post": {
+            "tags" : ["🧑🏻 User"],
+
+            "summary": "Adiciona um produto ao carrinho do usuário",
+            "parameters": [
+              {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/UserProductInput"
+                }
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/SuccessMessage"
+                }
+              }
+            }
+          }
+        },
+
+        "/user": {
+          "post": {
+            "tags" : ["🧑🏻 User"],
+
+            "summary": "Adiciona um usuário",
+            "parameters": [
+              {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "$ref": "#/definitions/UserInput"
+                }
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/SuccessMessage"
+                }
+              }
+            }
+          }
+        },
+
+        "/user/{userId}/{quantity}": {
+          "put": {
+            "tags" : ["🧑🏻 User"],
+
+            "summary": "Altera a quantidade de um produto do usuário",
+            "parameters": [
+              {
+                "name": "userId",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "quantity",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/SuccessMessage"
+                }
+              }
+            }
+          }
+        },
+
+        "/user/products/{id}/{user}": {
+          "delete": {
+            "tags" : ["🧑🏻 User"],
+
+            "summary": "Remove um produto do carrinho do usuário",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "user",
+                "in": "path",
+                "required": true,
+                "type": "string",
+                "format": "uuid"
+              }
+            ],
+            "responses": {
+              "201": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/SuccessMessage"
+                }
+              }
+            }
+          }
+        }
+
+
+
+
+      },
+
+      
+      "definitions": {
+        "UserInput": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "delivery_date": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        },
+        "SuccessMessage": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        "UserProductInput": {
+          "type": "object",
+          "properties": {
+            "id_product": {
+              "type": "integer"
+            },
+            "id_user": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        },    "SuccessMessage": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        "TotalPrice": {
+          "type": "object",
+          "properties": {
+            "price_total": {
+              "type": "number"
+            }
+          }
+        },
+        "UserProduct": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "id_product": {
+              "type": "integer"
+            },
+            "quantity": {
+              "type": "integer"
+            },
+            "price": {
+              "type": "number"
+            }
+          }
+        },
+        "Produto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "qty_stock": {
+              "type": "integer"
+            }
+          }
+        },
+        "Usuario": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+}

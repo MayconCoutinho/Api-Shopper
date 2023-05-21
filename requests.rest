@@ -1,20 +1,16 @@
 ###
 GET http://localhost:3003/shopper/products
 
+###
+PUT http://localhost:3003/shopper/products/16/100
+
+### 
+GET http://localhost:3003/shopper/user/products/b9a45bee-3a1b-49b4-a400-00bf6213816b
+
 ### 
 GET http://localhost:3003/shopper/user/maycon
-
 ###
-GET http://localhost:3003/shopper/user/products/580f22bd-7f79-406a-aec3-2caf61477d4f
-
-
-
-### 
-GET http://localhost:3003/shopper/user/products
-
-###
-GET http://localhost:3003/shopper/product/total/price/4149fd68-6ceb-4e1c-baf9-395397aa6427
-
+GET http://localhost:3003/shopper/user/product/total/price/b9a45bee-3a1b-49b4-a400-00bf6213816b
 
 ###
 POST http://localhost:3003/shopper/user/products
@@ -22,14 +18,14 @@ Content-Type: application/json
 
 {
     "id_product": 45,
-    "id_user": "4149fd68-6ceb-4e1c-baf9-395397aa6427"
+    "id_user": "b9a45bee-3a1b-49b4-a400-00bf6213816b"
 }
 ###
 POST http://localhost:3003/shopper/user
 Content-Type: application/json
 
 {
-    "name": "teste2",
+    "name": "maycon2",
     "delivery_date": "2022-10-01"
 }
 
@@ -37,4 +33,4 @@ Content-Type: application/json
 PUT http://localhost:3003/shopper/user/19/8
 
 ###
-DELETE http://localhost:3003/shopper/user/products/16
+DELETE http://localhost:3003/shopper/user/products/19/b9a45bee-3a1b-49b4-a400-00bf6213816b

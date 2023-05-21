@@ -12,18 +12,15 @@ class Migrations extends BaseDataBase {
       await this.createTables();
       console.log("✅ Tables created successfully.");
       console.log("✅ Populating tables...");
-      await this.insertData();
-      console.log("✅ Tables populated successfully.");
-      console.log("✅ Migrations completed.");
+      // descomenta caso queira inserir alguns dados no banco de dados
+      // await this.insertData();
+      // console.log("✅ Tables populated successfully.");
+      // console.log("✅ Migrations completed.");
     } catch (error) {
       console.log("❌ FAILED! Error in migrations...");
       if (error instanceof Error) {
         console.log(error.message);
       }
-    } finally {
-      console.log("✅ Ending connection...");
-      BaseDataBase.connection.destroy();
-      console.log("✅ Connection closed");
     }
   };
   createTables = async () => {
